@@ -1,0 +1,20 @@
+<div class="column">
+    <h2> Edit </h2>
+    <div class="card mt-3">
+        <div class="card-body">
+            <div class="form-container col">
+                <form name="DateForm">
+                    <div class="form-group row" *ngFor="let inputDate of myDates; let i = index;trackBy:trackByIndex;">
+                        <label [for]="'input '+ i" class="control-label col-sm-2"> {{ 'Input ' + (i + 1) }}</label>
+                        <input type="date" [name]="'input '+ i" class="form-control col-sm-5" [(ngModel)]="inputDate.dateTime" />
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="float-right">
+                            <button type="button" class="btn btn-success" (click)="postData()" > Submit </button>    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
